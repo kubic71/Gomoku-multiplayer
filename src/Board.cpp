@@ -14,9 +14,6 @@ struct OutOfBoundsException : public exception {
     }
 };
 
-Board::Board() {
-}
-
 Board::~Board() {
     delete gs;
 }

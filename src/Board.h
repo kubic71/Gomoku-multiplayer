@@ -18,7 +18,7 @@ public:
     // moves are considered only up to REMOTE_DIST distance from some current occupied cell
     static constexpr int REMOTE_DIST = 1;
 
-    Board();
+    Board() = default;
 
     // construct blank board
     Board(int size);
