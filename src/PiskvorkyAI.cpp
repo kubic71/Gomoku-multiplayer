@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int PiskvorkyAI::minimax(Board board, char player, int depth, int *move_r, int *move_c, int alpha, int beta, bool prune)
+int PiskvorkyAI::minimax(Board& board, char player, int depth, int *move_r, int *move_c, int alpha, int beta, bool prune)
 {
     if (depth == 0 || board.is_game_over())
     {
@@ -81,7 +81,7 @@ int PiskvorkyAI::minimax(Board board, char player, int depth, int *move_r, int *
     return best_val;
 }
 
-vector<float> PiskvorkyAI::maxn(Board board, char player, char players, int depth, int *move_r, int *move_c)
+vector<float> PiskvorkyAI::maxn(Board& board, char player, char players, int depth, int *move_r, int *move_c)
 {
     if (depth == 0 || board.is_game_over())
     {
