@@ -8,7 +8,7 @@
 using namespace std;
 
 class GameGUI {
-	static const int CELL_SIZE = 32;
+	static constexpr int CELL_SIZE = 32;
 	static constexpr float PADDING = 50.0;
 	static constexpr float LINE_THICKNESS = 1.5;
 

@@ -4,7 +4,7 @@
 #include "Board.h"
 
 class CmdGame {
-    static const int DEPTH=3;
+    static constexpr int DEPTH=3;
 
 public:
 

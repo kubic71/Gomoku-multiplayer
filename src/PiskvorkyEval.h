@@ -8,13 +8,13 @@
 using namespace std;
 class PiskvorkyEval {
 //    states for pattern-matching state automata
-    static const int SEARCHING_FOR_BLANK = 0;
-    static const int WAITING_FOR_PLAYER_SIGN = 1;
-    static const int COUNTING_PLAYER_SIGNS = 2;
+    static constexpr int SEARCHING_FOR_BLANK = 0;
+    static constexpr int WAITING_FOR_PLAYER_SIGN = 1;
+    static constexpr int COUNTING_PLAYER_SIGNS = 2;
 
 public:
 
-    static const int WIN_SCORE = 1000000;
+    static constexpr int WIN_SCORE = 1000000;
 
 
     static int get_open_score(vector<char> line, char player);

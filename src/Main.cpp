@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
     // CMD mode is only for 2 players
-    bool CMD_MODE = false;
+    bool constexpr CMD_MODE = false;
 
 
     // vector of human/AI flags, true = human player, false = AI

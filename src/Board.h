@@ -13,10 +13,10 @@ class Board {
 public:
     char *gs;
     int size;
-    static const char BLANK = 0;
+    static constexpr char BLANK = 0;
 
     // moves are considered only up to REMOTE_DIST distance from some current occupied cell
-    static const int REMOTE_DIST = 1;
+    static constexpr int REMOTE_DIST = 1;
 
     Board();
 
