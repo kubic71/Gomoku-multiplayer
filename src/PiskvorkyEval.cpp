@@ -154,7 +154,6 @@ int PiskvorkyEval::eval_board(Board board, char player) {
 
     for(auto const& line : GameUtil::get_lines(board)) {
         score += PiskvorkyEval::get_line_score(line, player);
-//        print_line(line);
     }
     return score;
 }

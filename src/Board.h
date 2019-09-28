@@ -15,7 +15,7 @@ public:
     int size;
     static const char BLANK = 0;
 
-    // moves are considered up to REMOTE_DIST distance from some current occupied cell
+    // moves are considered only up to REMOTE_DIST distance from some current occupied cell
     static const int REMOTE_DIST = 1;
 
     Board();
@@ -25,7 +25,6 @@ public:
     ~Board();
     Board& operator= (Board board);
 
-    // copy constructor
     Board(const Board &b2);
 
     char get(int r, int c);

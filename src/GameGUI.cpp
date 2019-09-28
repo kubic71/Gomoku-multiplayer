@@ -15,7 +15,6 @@ GameGUI::GameGUI(vector<bool> players_list, int size, int starting_player, int d
 
 void GameGUI::load_font()
 {
-	// load font
 	string font_file = "assets/arial.ttf";
 	if (!font.loadFromFile(font_file))
 	{
@@ -117,12 +116,12 @@ void GameGUI::draw_player_sign(float x, float y, char player)
 	}
 	else if (player == 2)
 	{
+		// draw O
 		sf::CircleShape shape(CELL_SIZE / 2 - 2);
 		shape.setPosition(sf::Vector2f(x + 1, y + 1));
 		shape.setFillColor(sf::Color::White);
 		shape.setOutlineThickness(-6.f);
 		shape.setOutlineColor(sf::Color::Blue);
-		// draw O
 
 		window->draw(shape);
 	}
@@ -227,16 +226,6 @@ void GameGUI::gameover_screen()
 void GameGUI::start_gameloop()
 {
 
-	// for debugging
-	// board.set(3, 3, 1);
-	// board.set(6 ,3, 2);
-	// board.set(10, 4, 1);
-	// board.set(4, 5, 2);
-	// board.set(17, 15, 1);
-	// board.set(13, 11, 3);
-	// board.set(3, 11, 3);
-	// board.set(12, 1, 4);
-
 	window = new sf::RenderWindow(sf::VideoMode(2*PADDING + CELL_SIZE * board.size, 3*PADDING + CELL_SIZE * board.size), "Piskvorky");
 	std::thread ai_thread;
 
@@ -248,8 +237,6 @@ void GameGUI::start_gameloop()
 			gameover_screen();
 			restart_game();
 		}
-
-		// gameGui.update(elapsed);
 
 		sf::Event event;
 		while (window->pollEvent(event))
@@ -276,7 +263,6 @@ void GameGUI::start_gameloop()
 			break;
 
 			default:
-				// gameGui->HandleEvent(event);
 				break;
 			}
 		}

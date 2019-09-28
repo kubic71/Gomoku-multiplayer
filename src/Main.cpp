@@ -8,6 +8,7 @@ using namespace std;
 
 
 int main() {
+    // CMD mode is only for 2 players
     bool CMD_MODE = false;
 
 

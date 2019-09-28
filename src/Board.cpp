@@ -29,7 +29,6 @@ Board& Board::operator= (Board board) {
 }
 
 
-
 Board::Board(int size) {
     this->gs = new char[size*size];
 
@@ -59,7 +58,7 @@ void Board::set(int r, int c, char val) {
 }
 
 // return all possible moves at current game state
-// to keep branching factor low, consider only moves that are at most 2 cells away from some
+// to keep branching factor low, consider only moves that are at most 2 cells away from some occupied cell
 vector<Point> Board::get_moves() {
     vector<Point> moves;
 

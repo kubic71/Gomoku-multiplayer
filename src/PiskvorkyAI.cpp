@@ -85,10 +85,8 @@ vector<float> PiskvorkyAI::maxn(Board board, char player, char players, int dept
 {
     if (depth == 0 || board.is_game_over())
     {
-        // cout << debug_counter << endl;
         debug_counter += 1;
         vector<float> eval = PiskvorkyEval::eval_board_maxn(board, players);
-        // cout << eval.size() << endl;
         return eval;
     }
 
@@ -100,7 +98,6 @@ vector<float> PiskvorkyAI::maxn(Board board, char player, char players, int dept
 
     for (Point move : board.get_moves())
     {
-        // cout << "Depth: " << depth << " Move " << move.r << ", " << move.c << endl;
         Board new_board = board;
         new_board.set(move.r, move.c, player);
         new_eval = maxn(new_board, GameUtil::next_player(player, players), players, depth - 1, nullptr, nullptr);

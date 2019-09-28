@@ -67,7 +67,6 @@ vector<vector<char>> GameUtil::get_diagonals(Board board, bool flip) {
     return diags;
 }
 
-
 vector<vector<char>> GameUtil::get_lines(Board board) {
     vector<vector<char>> rows = GameUtil::get_rows(board);
     vector<vector<char>> cols = GameUtil::get_columns(board);
@@ -80,18 +79,6 @@ vector<vector<char>> GameUtil::get_lines(Board board) {
     lines.insert(lines.end(), cols.begin(), cols.end());
     lines.insert(lines.end(), diags1.begin(), diags1.end());
     lines.insert(lines.end(), diags2.begin(), diags2.end());
-
-//
-//    cout << "lines:\n";
-//    for (auto const &line : lines) {
-//
-//        for (auto const &val : line) {
-//            cout << to_string(val) << " ";
-//        }
-//
-//
-//        cout << "|" << endl;
-//    }
 
     return lines;
 }
