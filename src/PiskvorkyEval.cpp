@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int PiskvorkyEval::get_half_closed_score(vector<char> line, char player) {
+int PiskvorkyEval::get_half_closed_score(const vector<char>& line1, char player) {
 //    state automata for finding half closed combinations
 //    e.g. - - X X X O O
 //    or   O O - X X X X
@@ -16,6 +16,9 @@ int PiskvorkyEval::get_half_closed_score(vector<char> line, char player) {
 //   half-closed 3 - 10
 
 //    artificially close the right end of the line
+
+    // line1 is const ref.
+    vector<char> line = line1;
     line.push_back(player + 1);
     int counter = 0;
     int state = SEARCHING_FOR_BLANK;
@@ -55,7 +58,7 @@ int PiskvorkyEval::get_half_closed_score(vector<char> line, char player) {
     return score;
 }
 
-int PiskvorkyEval::get_open_score(vector<char> line, char player) {
+int PiskvorkyEval::get_open_score(const vector<char>& line, char player) {
 //    state automata for finding open combinations
 //    e.g. - - X X X - O
 //    or   - - X X X X - -
@@ -110,7 +113,7 @@ int PiskvorkyEval::get_open_score(vector<char> line, char player) {
     return score;
 }
 
-int PiskvorkyEval::get_five_in_row_score(vector<char> line, char player) {
+int PiskvorkyEval::get_five_in_row_score(const vector<char>& line, char player) {
     int counter = 0;
     for(char c : line) {
         if (c == player) {
@@ -128,10 +131,11 @@ int PiskvorkyEval::get_five_in_row_score(vector<char> line, char player) {
 }
 
 
-int PiskvorkyEval::get_line_score(vector<char> line, char player) {
+int PiskvorkyEval::get_line_score(vector<char>& line, char player) {
     int score = 0;
     score += PiskvorkyEval::get_open_score(line, player);
     score += PiskvorkyEval::get_half_closed_score(line, player);
+
 
     reverse(line.begin(), line.end());
     score += PiskvorkyEval::get_half_closed_score(line, player);
@@ -142,29 +146,29 @@ int PiskvorkyEval::get_line_score(vector<char> line, char player) {
 
 }
 
-void PiskvorkyEval::print_line(vector<char> line) {
+void PiskvorkyEval::print_line(const vector<char>& line) {
     for (auto const& c : line) {
         cout << to_string(c);
     }
     cout << endl;
 }
 
-int PiskvorkyEval::eval_board(Board board, char player) {
+int PiskvorkyEval::eval_board(const Board& board, char player) {
     int score = 0;
 
-    for(auto const& line : GameUtil::get_lines(board)) {
+    for(auto & line : GameUtil::get_lines(board)) {
         score += PiskvorkyEval::get_line_score(line, player);
     }
     return score;
 }
 
-int PiskvorkyEval::eval_board_minimax(Board board) {
+int PiskvorkyEval::eval_board_minimax(const Board& board) {
     int maximizing_player1 = eval_board(board, 1);
     int minimizing_player1 = eval_board(board, 2);
     return maximizing_player1 - minimizing_player1;
 }
 
-vector<float> PiskvorkyEval::eval_board_maxn(Board board, char players) {
+vector<float> PiskvorkyEval::eval_board_maxn(const Board& board, char players) {
     vector<float> evals;
     for(char i = 1; i <= players; i++) {
         evals.push_back(PiskvorkyEval::eval_board(board,i));

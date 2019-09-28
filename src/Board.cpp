@@ -94,7 +94,7 @@ bool Board::is_in_board(int r, int c) const {
     return r >= 0 && r < size && c >= 0 && c < size;
 }
 
-void Board::print_moves(vector<Point> moves) {
+void Board::print_moves(const vector<Point>& moves) {
     for(auto const& move: moves) {
         cout << move.r << " " << move.c << endl;
     }

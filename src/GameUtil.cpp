@@ -9,7 +9,7 @@ char GameUtil::next_player(char current_player, char players) {
 }
 
 
-vector<vector<char>> GameUtil::get_rows(Board board, bool flip) {
+vector<vector<char>> GameUtil::get_rows(const Board& board, bool flip) {
     vector<vector<char>> rows;
     for (int r = 0; r < board.size; r++) {
         vector<char> row;
@@ -28,15 +28,15 @@ vector<vector<char>> GameUtil::get_rows(Board board, bool flip) {
 }
 
 
-vector<vector<char>> GameUtil::get_rows(Board board) {
+vector<vector<char>> GameUtil::get_rows(const Board& board) {
     return GameUtil::get_rows(board, false);
 }
 
-vector<vector<char>> GameUtil::get_columns(Board board) {
+vector<vector<char>> GameUtil::get_columns(const Board& board) {
     return GameUtil::get_rows(board, true);
 }
 
-vector<vector<char>> GameUtil::get_diagonals(Board board, bool flip) {
+vector<vector<char>> GameUtil::get_diagonals(const Board& board, bool flip) {
     vector<vector<char>> diags;
 
     int r;
@@ -67,7 +67,7 @@ vector<vector<char>> GameUtil::get_diagonals(Board board, bool flip) {
     return diags;
 }
 
-vector<vector<char>> GameUtil::get_lines(Board board) {
+vector<vector<char>> GameUtil::get_lines(const Board& board) {
     vector<vector<char>> rows = GameUtil::get_rows(board);
     vector<vector<char>> cols = GameUtil::get_columns(board);
     vector<vector<char>> diags1 = GameUtil::get_diagonals(board, false);

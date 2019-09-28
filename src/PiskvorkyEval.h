@@ -17,19 +17,19 @@ public:
     static constexpr int WIN_SCORE = 1000000;
 
 
-    static int get_open_score(vector<char> line, char player);
-    static int get_half_closed_score(vector<char> line, char player);
-    static int get_line_score(vector<char> line, char player);
-    static int get_five_in_row_score(vector<char> line, char player);
+    static int get_open_score(const vector<char>& line, char player);
+    static int get_half_closed_score(const vector<char>& line, char player);
+    static int get_line_score(vector<char>& line, char player);
+    static int get_five_in_row_score(const vector<char>& line, char player);
 
 
-    static void print_line(vector<char> line);
+    static void print_line(const vector<char>& line);
 
 
 
-    static int eval_board(Board board, char player);
-    static int eval_board_minimax(Board board);
-    static vector<float> eval_board_maxn(Board board, char players);
+    static int eval_board(const Board& board, char player);
+    static int eval_board_minimax(const Board& board);
+    static vector<float> eval_board_maxn(const Board& board, char players);
 
 };
 

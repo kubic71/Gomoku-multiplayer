@@ -28,18 +28,18 @@ class GameGUI {
 
 	void restart_game();
 	void restart_game(int size, char players, char starting_player, vector<bool> players_list, int depth);
-	void make_move(Point p);
+	void make_move(const Point& p);
 	void make_ai_move();
 
 	void load_font();
 	void draw_text(string s, float x, float y);
-	void draw_line(sf::Vector2f p0, sf::Vector2f p1, float thickness);
-	void draw_line(sf::Vector2f p0, sf::Vector2f p1, float thickness, sf::Color color);
+	void draw_line(const sf::Vector2f& p0, const sf::Vector2f& p1, float thickness);
+	void draw_line(const sf::Vector2f& p0, const sf::Vector2f& p1, float thickness, sf::Color color);
 
 	void draw_player_sign(float x, float y, char player);
 
 	void draw_grid(int size);
-	void draw_board(Board board);
+	void draw_board(const Board& board);
 
 	void gameover_screen();
 

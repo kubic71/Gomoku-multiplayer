@@ -32,7 +32,7 @@ public:
     std::vector<Point> get_moves() const;
 
 //    debug method
-    static void print_moves(std::vector<Point> moves);
+    static void print_moves(const std::vector<Point>& moves);
 
     static bool is_in_board(int r, int c, int size);
     bool is_in_board(int r, int c) const;

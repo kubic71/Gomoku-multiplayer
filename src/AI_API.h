@@ -9,7 +9,7 @@ using namespace std;
 
 class AI_API {
 public:
-    static void get_best_move(Board board, char player, char players, int depth, int* move_r, int* move_c);
+    static void get_best_move(const Board & board, char player, char players, int depth, int* move_r, int* move_c);
 };
 
 

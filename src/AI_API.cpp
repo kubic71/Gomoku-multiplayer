@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void AI_API::get_best_move(Board board, char player, char players, int depth, int *move_r, int *move_c) {
+void AI_API::get_best_move(const Board& board, char player, char players, int depth, int *move_r, int *move_c) {
     if (players == 2) {
         bool PRUNE = true;
 

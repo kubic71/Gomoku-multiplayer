@@ -55,12 +55,12 @@ void GameGUI::draw_text(string s, float x, float y)
 	window->draw(text);
 }
 
-void GameGUI::draw_line(sf::Vector2f p0, sf::Vector2f p1, float thickness)
+void GameGUI::draw_line(const sf::Vector2f& p0, const sf::Vector2f& p1, float thickness)
 {
 	draw_line(p0, p1, thickness, sf::Color::Black);
 }
 
-void GameGUI::draw_line(sf::Vector2f p0, sf::Vector2f p1, float thickness, sf::Color color)
+void GameGUI::draw_line(const sf::Vector2f& p0, const sf::Vector2f& p1, float thickness, sf::Color color)
 {
 	sf::ConvexShape convex;
 	convex.setPointCount(4);
@@ -87,7 +87,7 @@ void GameGUI::draw_line(sf::Vector2f p0, sf::Vector2f p1, float thickness, sf::C
 	window->draw(convex);
 }
 
-void GameGUI::draw_board(Board board)
+void GameGUI::draw_board(const Board& board)
 {
 	draw_grid(board.size);
 
@@ -171,7 +171,7 @@ void GameGUI::handle_click(int x, int y)
 	}
 }
 
-void GameGUI::make_move(Point p)
+void GameGUI::make_move(const Point& p)
 {
 	if (board.get(p.r, p.c) == Board::BLANK)
 	{

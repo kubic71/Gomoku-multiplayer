@@ -19,7 +19,7 @@ void CmdInterface::get_user_input(int* row, int* col) {
 }
 
 
-void CmdInterface::print_board(Board board) {
+void CmdInterface::print_board(const Board& board) {
     // print top row with number indexes
     cout << "\n  ";
     for(int i=0; i<board.size; i++) {
