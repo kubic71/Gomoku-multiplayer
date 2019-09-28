@@ -144,7 +144,7 @@ void GameGUI::draw_grid(int size)
 	}
 }
 
-Point GameGUI::compute_coords(int x, int y)
+Point GameGUI::compute_coords(int x, int y) const
 {
 	Point p;
 	p.c = (x - PADDING) / CELL_SIZE;
@@ -189,7 +189,7 @@ void GameGUI::make_ai_move()
 	ai_is_making_move = false;
 }
 
-bool GameGUI::is_user_player(char player)
+bool GameGUI::is_user_player(char player) const
 {
 	return players_list[player - 1];
 }

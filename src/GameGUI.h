@@ -24,7 +24,7 @@ class GameGUI {
 	vector<bool> players_list;
 	int search_depth;
 
-	bool is_user_player(char player);
+	bool is_user_player(char player) const;
 
 	void restart_game();
 	void restart_game(int size, char players, char starting_player, vector<bool> players_list, int depth);
@@ -44,7 +44,7 @@ class GameGUI {
 	void gameover_screen();
 
 	void handle_click(int x, int y);
-	Point compute_coords(int x, int y);
+	Point compute_coords(int x, int y) const;
 
 
 

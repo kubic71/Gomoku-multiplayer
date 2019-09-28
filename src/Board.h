@@ -27,20 +27,20 @@ public:
 
     Board(const Board &b2);
 
-    char get(int r, int c);
+    char get(int r, int c) const;
     void set(int r, int c, char val);
-    std::vector<Point> get_moves();
+    std::vector<Point> get_moves() const;
 
 //    debug method
     static void print_moves(std::vector<Point> moves);
 
     static bool is_in_board(int r, int c, int size);
-    bool is_in_board(int r, int c);
-    bool is_remote_cell(int r, int c);
+    bool is_in_board(int r, int c) const;
+    bool is_remote_cell(int r, int c) const;
 
-    bool is_board_full();
-    char five_in_row();
-    bool is_game_over();
+    bool is_board_full() const;
+    char five_in_row() const;
+    bool is_game_over() const;
 
 
 
