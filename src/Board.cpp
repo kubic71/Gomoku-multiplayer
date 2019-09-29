@@ -14,33 +14,16 @@ struct OutOfBoundsException : public exception {
     }
 };
 
-Board::~Board() {
-    delete gs;
-}
-
-Board& Board::operator= (Board board) {
-    size = board.size;
-    gs = new char[size*size];
-    memcpy(gs, board.gs, size*size);
-    return *this;
-}
-
 
 Board::Board(int size) {
-    this->gs = new char[size*size];
 
     for(int i=0; i<size*size; i++) {
-        this->gs[i] = 0;
+        gs.push_back(0);
     }
 
     this->size = size;
 }
 
-Board::Board(const Board &b2) {
-    size = b2.size;
-    gs = new char[size*size];
-    memcpy(gs, b2.gs, size*size);
-}
 
 
 char Board::get(int r, int c) const {

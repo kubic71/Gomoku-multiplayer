@@ -2,7 +2,7 @@
 #define CPP_PISKVKORKY_BOARD_H
 
 #include <vector>
-
+using namespace std;
 
 struct Point {
     int r;
@@ -11,7 +11,7 @@ struct Point {
 
 class Board {
 public:
-    char *gs;
+    vector<char> gs;
     int size;
     static constexpr char BLANK = 0;
 
@@ -22,10 +22,6 @@ public:
 
     // construct blank board
     Board(int size);
-    ~Board();
-    Board& operator= (Board board);
-
-    Board(const Board &b2);
 
     char get(int r, int c) const;
     void set(int r, int c, char val);
